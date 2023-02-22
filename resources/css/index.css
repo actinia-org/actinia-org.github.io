@@ -1,0 +1,190 @@
+html {
+    background: url('../img/hudson_bay.jpg') center/cover no-repeat fixed;
+    /* background-color: rgba(0,0,0,0.6);
+    background-blend-mode: hard-light; */
+    /* background-blend-mode: luminosity; */
+    /* background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten; */
+    background-color: rgba(0,0,0,0.4);
+    background-blend-mode: darken;
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+    line-height: 1.4em;
+    margin: 0;
+    color: #404040;
+}
+
+h1, h2 {
+    color: #86cd31;
+    margin-bottom: 2em;
+    text-align: center;
+    line-height: 1em;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #86cd31;
+}
+
+
+
+hr {
+    clear: both;
+    opacity: 0;
+}
+
+main {
+    background-color: rgba(255,255,255,0.94);
+    padding: 2em;
+    margin: auto;
+    margin-top: 12em;
+    border-radius: 3px;
+    z-index:2;
+    -webkit-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    -moz-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    -ms-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    -o-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+}
+main p#description {
+    /* margin-left: 3em; */
+    width: 65em;
+    text-align: right;
+}
+/* ----------- */
+div#logo{
+    border-radius:100%;
+    background-color: rgba(255,255,255,0.94);
+    margin:auto;
+    text-align:center;
+    width:12em;
+    height:12em;
+}
+div#logo p{
+    padding-top:3em;
+    font-size:3em;
+}
+div#logo:hover {
+    background-color: #fff;
+}
+div#logo img {
+    width: 7em;
+    position: relative;
+    top: -12em;
+}
+/* ----------- */
+div.top {
+    border-radius:100%;
+    background-color: rgba(255,255,255,0.94);
+    text-align:center;
+    width:4em;
+    height:4em;
+    float:left;
+    margin-left:2em;
+}
+div.top:hover {
+    background-color:#fff;
+}
+div.top img.gh {
+    width: 4em;
+}
+div.top p {
+    margin: 0;
+    font-weight: bold;
+    color: #404040;
+}
+/* ----------- */
+.flexparent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 56%;
+    float: right;
+    margin-left: 15em;
+    /* margin: 6em; */
+}
+.flexchild {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100%;
+    border: solid #86cd31 1px;
+    background: #86cd31;
+    margin: auto;
+    margin-top: 3em;
+    margin-right: 4em;
+    padding: 3%;
+    text-align: center;
+    width: 6em;
+    height: 6em;
+}
+.flexchild:hover {
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.34);
+    /* background-color: rgba(255,255,255,0.94); */
+}
+.flexchild:nth-child(1):hover {
+    background: url(../img/tutorial.png) center/cover no-repeat;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+}
+.flexchild:nth-child(2):hover {
+    background: url(../img/workshop.png) center/cover no-repeat;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+}
+.flexchild:nth-child(3):hover {
+    background: url(../img/intro.png) center/cover no-repeat;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+}
+.flexchild:nth-child(4):hover {
+    background: url(../img/apidocs.png) center/cover no-repeat;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+}
+a.flexchild {
+    text-decoration: none;
+    color: #404040;
+    font-size: larger;
+    font-weight: bold;
+}
+a.flexchild .moreinfos{
+   font-weight: normal;
+}
+.event > .maininfo {
+    text-align: left;
+    letter-spacing: 0.15em;
+}
+.event > .moreinfos {
+    transition: visibility 0s, opacity 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+.event:hover > .moreinfos {
+    visibility: visible;
+    opacity: 1;
+    background-color: #fff;
+    border-radius: 100%;
+    border: solid #86cd31 1px;
+    padding: 11%;
+    width: 10em;
+    position: relative;
+    top: -15em;
+}
+/* ----------- */
+
+
+
+
+/* @media only screen and (max-width: 600px) {
+    .flexchild {
+        width: 100%;
+    }
+} */
