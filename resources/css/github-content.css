@@ -24,9 +24,11 @@ div#recently-updated {
   align-items: center;
   background-color: rgba(255,255,255,0.94);
 }
-#recently-updated h1 a {
+#recently-updated h3 {
+  text-align: center;
+}
+#recently-updated h3 a {
   font-weight: normal;
-  font-size: 11px;
 }
 #recently-updated-repos li {
   line-height: 1.5;
@@ -35,11 +37,9 @@ div#recently-updated {
 #recently-updated-repos li span {
   display: inline-block;
   padding: 0 1px;
-  font-size: 11px;
 }
 #recently-updated-repos li span.name {
   padding: 0 6px 0 0;
-  font-size: 13px;
 }
 #recently-updated-repos li span.time a,
 #recently-updated-repos li span.watchers a,
