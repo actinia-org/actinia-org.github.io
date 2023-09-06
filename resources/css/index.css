@@ -183,8 +183,18 @@ a.flexchild .moreinfos{
 
 
 
-/* @media only screen and (max-width: 600px) {
-    .flexchild {
+@media screen and (max-width: 1000px) {
+    div.top {
+        margin-left: 1em;
+    }
+    div#logo {
+        visibility: hidden;
+    }
+    .flexparent {
+        width: 100%;
+        margin-left: 0em;
+    }
+    main p#description {
         width: 100%;
     }
-} */
+}
