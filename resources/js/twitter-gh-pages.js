@@ -22,25 +22,80 @@
       $item.appendTo("#recently-updated-repos");
     }
 
+
+
+    function hasTopic(repo, topic){
+      return repo.topics && repo.topics.indexOf(topic) !== -1;
+    }
+
+    function getCategoryTopics(repo) {
+      var categoryTopics = [
+        "actinia-core",
+        "actinia-api",
+        "actinia-plugin",
+        "actinia-example",
+        "actinia-docs",
+        "actinia-deployment"
+      ];
+
+      if (!repo.topics) {
+        return [];
+      }
+
+      return repo.topics.filter(function(topic) {
+        return categoryTopics.indexOf(topic) !== -1;
+      });
+    }
+
+    function getRepoTarget(repo){
+      if (hasTopic(repo,"actinia-core")){
+        return "#core-repos";
+      }
+
+      if (hasTopic(repo,"actinia-plugin")){
+        return "#plugin-repos";
+      }
+
+      if (hasTopic(repo,"actinia-api")){
+        return "#api-repos";
+      }
+
+      if (hasTopic(repo,"actinia-training")){
+        return "#example-repos";
+      }
+      if (hasTopic(repo,"actinia-deployment")){
+        return "#deployment-repos";
+      }
+      return "#other-repos";
+    }  
+
     function addRepo(repo) {
       var $item = $("<div>").addClass("repo grid-1 " + (repo.language || '').toLowerCase());
-      var $link = $("<a>").attr({"href": repo.html_url,"target": "_blank"}).appendTo($item);
-      $link.append($("<h2>").text(repo.name));
-      $link.append($("<h3>").text(repo.language + " - ★" + repo.watchers + " - ⑂" + repo.forks + " - ⊙" + repo.open_issues));
-      $link.append($("<h4>").html("<button>" + repo.topics.join('</button><button>') + "</button>"));
-      $link.append($("<p>").text(repo.description));
-      $item.appendTo("#repos");
+      var $link = $("<a>").attr({"href": repo.html_url, "target": "_blank"}).appendTo($item);
+      var categoryTopics = getCategoryTopics(repo);
 
-      // "license": {
-      //   "key": "gpl-3.0",
-      //   "name": "GNU General Public License v3.0",
-      //   "spdx_id": "GPL-3.0",
-      // },
-      // "has_issues": true,
-      // "has_projects": true,
-      // "has_wiki": true,
-      // "has_pages": true,
-      // "has_discussions": true,
+      $link.append($("<h2>").text(repo.name));
+      $link.append($("<h3>").text(
+        (repo.language || "Unknown") +
+        " - ★" + repo.watchers +
+        " - ⑂" + repo.forks +
+        " - ⊙" + repo.open_issues
+      ));
+
+      if (repo.topics && repo.topics.length > 0) {
+        $link.append($("<h4>").html("<button>" + repo.topics.join("</button><button>") + "</button>"));
+      }
+
+      $link.append($("<p>").text(repo.description || "No description available."));
+
+      if (categoryTopics.length > 1) {
+        console.warn(
+          "Repository has multiple documentation category topics:",
+          repo.name,
+          categoryTopics
+        );
+      }
+      $item.appendTo(getRepoTarget(repo));
     }
 
     function addRepos(repos, page) {
@@ -212,3 +267,23 @@
     }
 
   })(jQuery);
+  
+$(document).ready(function () {
+  var sections = document.querySelectorAll(".repo-section");
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      } else {
+        entry.target.classList.remove("is-visible");
+      }
+    });
+  }, {
+    threshold: 0.25
+  });
+
+  sections.forEach(function (section) {
+    observer.observe(section);
+  });
+});
