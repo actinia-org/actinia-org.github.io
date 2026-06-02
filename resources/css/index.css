@@ -17,6 +17,7 @@ body {
 }
 
 h1, h2 {
+    font-size: 50px;
     color: #86cd31;
     margin-bottom: 2em;
     text-align: center;
@@ -58,14 +59,30 @@ main p#description {
     width: 65em;
     text-align: right;
 }
+
+repos-landing {
+    background-color: rgba(255,255,255,0.94);
+    padding: 2em;
+    margin: auto;
+    margin-top: 12em;
+    border-radius: 3px;
+    z-index:2;
+    -webkit-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    -moz-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    -ms-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    -o-box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+    box-shadow: 2px 2px 190px 80px rgba(0,0,0,0.34);
+}
 /* ----------- */
 div#logo{
-    border-radius:100%;
-    background-color: rgba(255,255,255,0.94);
+    width: 225px;
+    height: 200px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: #fff;
     margin:auto;
     text-align:center;
-    width:12em;
-    height:12em;
+    position: relative;
+    
 }
 div#logo p{
     padding-top:3em;
@@ -81,8 +98,10 @@ div#logo img {
 }
 /* ----------- */
 div.top {
-    border-radius:100%;
-    background-color: rgba(255,255,255,0.94);
+    width: 190px;
+    height: 165px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-color:  #fff;
     text-align:center;
     width:4em;
     height:4em;
@@ -100,101 +119,138 @@ div.top p {
     font-weight: bold;
     color: #404040;
 }
-/* ----------- */
-.flexparent {
+/* ----------- First Steps section ----------- */
+
+#first-steps {
+    margin: 0 auto 1em;
+    padding: 0 1em;
+}
+
+.fs-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #86cd31;
+    margin-bottom: 0.3em;
+    display: block;
+}
+
+.fs-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #404040;
+    line-height: 1.2;
+    margin: 0 0 0.2em;
+    text-align: left;
+}
+
+.fs-title span {
+    color: #86cd31;
+}
+
+.fs-sub {
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 1.8em;
+    font-weight: 400;
+}
+
+/* Hex grid */
+.hex-grid {
     display: flex;
     flex-wrap: wrap;
-    width: 56%;
-    float: right;
-    margin-left: 15em;
-    /* margin: 6em; */
+    justify-content: flex-start;
+    gap: 14px 10px;
+    margin-bottom: 1em;
 }
-.flexchild {
+
+.hex-link {
+    width: 190px;
+    height: 165px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: rgba(134,205,49,0.15);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    /*border-radius: 100%;*/
-    border: solid #86cd31 1px;
-    background: #86cd31;
-    margin: auto;
-    margin-top: 3em;
-    margin-right: 4em;
-    padding: 0;
+    justify-content: center;
     text-align: center;
-    width: 8em;
-    height: 6.9em;
-    clip-path: polygon(
-        25% 0%,
-        75% 0%,
-        100% 50%,
-        75% 100%,
-        25% 100%,
-        0% 50%
-    );
-}
-.flexchild:hover {
-    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.34);
-    /* background-color: rgba(255,255,255,0.94); */
-}
-.flexchild:nth-child(1):hover {
-    background: url(../img/tutorial.png) center/cover no-repeat;
-    background-color: rgba(255,255,255,0.5);
-    background-blend-mode: lighten;
-}
-.flexchild:nth-child(2):hover {
-    background: url(../img/workshop.png) center/cover no-repeat;
-    background-color: rgba(255,255,255,0.5);
-    background-blend-mode: lighten;
-}
-.flexchild:nth-child(3):hover {
-    background: url(../img/intro.png) center/cover no-repeat;
-    background-color: rgba(255,255,255,0.5);
-    background-blend-mode: lighten;
-}
-.flexchild:nth-child(4):hover {
-    background: url(../img/apidocs.png) center/cover no-repeat;
-    background-color: rgba(255,255,255,0.5);
-    background-blend-mode: lighten;
-}
-a.flexchild {
+    padding: 20px 30px;
     text-decoration: none;
     color: #404040;
-    font-size: larger;
-    font-weight: bold;
+    transition: background 0.2s;
 }
-a.flexchild .moreinfos{
-   font-weight: normal;
+
+.hex-link:hover {
+    background: #86cd31;
 }
-.event > .maininfo {
-    text-align: left;
-    letter-spacing: 0.15em;
+
+.hex-link.featured {
+    background: #86cd31;
 }
-.event > .moreinfos {
-    transition: visibility 0s, opacity 0.5s linear;
-    visibility: hidden;
-    opacity: 0;
+
+.hex-link.featured:hover {
+    background: #9ddd45;
 }
-.event:hover > .moreinfos {
-    visibility: visible;
-    opacity: 1;
-    background-color: #fff;
-    /*border-radius: 100%;*/
-    border: solid #86cd31 1px;
-    padding: 11%;
-    width: 10em;
-    position: relative;
-    top: -15em;
-    clip-path: polygon(
-        25% 0%,
-        75% 0%,
-        100% 50%,
-        75% 100%,
-        25% 100%,
-        0% 50%
-    );
+
+.hex-num {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: #86cd31;
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+    transition: color 0.2s;
 }
-/* ----------- */
+
+.hex-link:hover .hex-num,
+.hex-link.featured .hex-num {
+    color: rgba(0,0,0,0.45);
+}
+
+.hex-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    transition: color 0.2s;
+}
+
+.hex-link:hover .hex-title {
+    color: #1a1a1a;
+}
+
+.hex-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    transition: color 0.2s;
+}
+
+.hex-link:hover .hex-desc,
+.hex-link.featured .hex-desc {
+    color: rgba(0,0,0,0.6);
+}
+
+.hex-tag {
+    margin-top: 5px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    color: #86cd31;
+    letter-spacing: 0.06em;
+    border: 0.5px solid #86cd31;
+    padding: 1px 5px;
+    border-radius: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.hex-link:hover .hex-tag,
+.hex-link.featured .hex-tag {
+    color: rgba(0,0,0,0.45);
+    border-color: rgba(0,0,0,0.3);
+}
+
 
 
 
