@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
     <title>actinia-org</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=false">
@@ -12,7 +12,6 @@
     <script type="text/javascript" src="resources/js/twitter-gh-pages.js"></script>
 </head>
 <body>
-
 <a href="https://github.com/orgs/actinia-org">
   <div class="top">
     <img class="gh" src="resources/img/github-mark.svg" alt="GitHub Logo" />
@@ -21,18 +20,18 @@
 <a href="https://github.com/orgs/actinia-org/repositories">
   <div class="top">
     <span id="num-repos"><img src="resources/img/spinner.gif" /></span>
-    <p> repos</p>
+    <p> Repos</p>
   </div>
 </a>
 <a href="https://github.com/orgs/actinia-org/people">
   <div class="top">
     <span id="num-members"><img src="resources/img/spinner.gif" /></span>
-    <p> people</p>
+    <p> People</p>
   </div>
 </a>
 <a href="https://github.com/orgs/actinia-org/projects/1">
     <div class="top">
-        <p>⊞<br>tasks</p>
+        <p>⊞<br>Tasks</p>
     </div>
   </a>
 
@@ -48,7 +47,7 @@
         <ol id="recently-updated-repos"></ol>
     </div>
     <div>
-        <h1>actinia-org-mdf <sup style="font-size: small;">
+        <h1>actinia-org <sup style="font-size: small;">
             <a href="https://actinia.mundialis.de/api/v3/version">latest</a>
         </sup></h1>
     </div>
@@ -57,44 +56,43 @@
 
 <main>
 
-    <div class="flexparent">
-        <a class="event flexchild" href="https://actinia-org.github.io/actinia-core/" target="_blank">
-            <div class="maininfo">
-                <p>Tutorial</p>
-            </div>
-            <!-- <div class="moreinfos">
-                <img src="resources/img/idea.svg" alt="bubble" />
-                <p>Learn more about the concepts behind actinia and how to use it</p>
-            </div> -->
-        </a>
-        <a class="event flexchild" href="https://actinia-org.GitHub.io/actinia-introduction/" target="_blank">
-            <div class="maininfo">
-                <p>Workshop</p>
-            </div>
-            <!-- <div class="moreinfos">
-            <img src="resources/img/idea.svg" alt="bubble" />
-            <p>A detailed actinia workshop to get you started</p>
-            </div> -->
-        </a>
-        <a class="event flexchild" href="https://actinia-org.github.io/slides/intro" target="_blank">
-            <div class="maininfo">
-                <p>Intro</p>
-            </div>
-            <!-- <div class="moreinfos">
-                <img src="resources/img/idea.svg" alt="bubble" />
-                <p>Get a basic understanding about what actinia is</p>
-            </div> -->
-        </a>
-        <a class="event flexchild" href="https://redocly.github.io/redoc/?url=https://actinia.mundialis.de/latest/swagger.json&nocors" target="_blank">
-            <div class="maininfo">
-                <p>API&nbsp;docs</p>
-            </div>
-            <!-- <div class="moreinfos">
-                <img src="resources/img/idea.svg" alt="bubble" />
-                <p>View actinia API docs including plugin endpoints</p>
-            </div> -->
-        </a>
-    </div>
+    <section id="first-steps">
+        <span class="fs-label">// getting started</span>
+        <h2 class="fs-title">First steps with <span>actinia</span></h2>
+        <p class="fs-sub">Pick your starting point — from quick intro to full API reference</p>
+
+        <div class="hex-grid">
+
+            <a class="hex-link featured" href="https://actinia-org.github.io/actinia-core/" target="_blank">
+                <div class="hex-num">01</div>
+                <div class="hex-title">Official Tutorial</div>
+                <div class="hex-desc">Concepts, installation, DB access &amp; some plugins</div>
+            </a>
+
+            <a class="hex-link" href="https://actinia-org.GitHub.io/actinia-introduction/" target="_blank">
+                <div class="hex-num">02</div>
+                <div class="hex-title">Hands-on Workshop</div>
+                <div class="hex-desc">Real examples, learn by doing</div>
+            </a>
+
+            <a class="hex-link" href="https://actinia-org.github.io/slides/intro" target="_blank">
+                <div class="hex-num">03</div>
+                <div class="hex-title">Intro Slides</div>
+                <div class="hex-desc">What actinia is, what problems it solves &amp; when to use it</div>
+            </a>
+
+            <a class="hex-link" href="https://redocly.github.io/redoc/?url=https://actinia.mundialis.de/latest/swagger.json&nocors" target="_blank">
+                <div class="hex-num">04</div>
+                <div class="hex-title">Modules</div>
+                <div class="hex-desc">Full REST API reference — endpoints, params &amp; plugins</div>
+            </a>
+
+
+
+        </div>
+    </section>
+
+
 
     <hr>
 
@@ -104,12 +102,48 @@
     delivered in near real-time.<br>
     actinia is free and open source software, available on <a href="https://github.com/actinia-org" target="_blank">GitHub</a>.
     </p>
+
+   
+            
 </main>
 
-<hr>
+    <section class="repo-section">
+        <span class="fs-label">// core</span>
+        <h2 class="fs-title">Core repositories</h2>
+        <p class="fs-sub">Main actinia components and API-related repositories.</p>
+        <div id="core-repos" class="repo-grid"></div>
+    </section>
 
-<div id="repos">
-</div>
+    <section class="repo-section">
+        <span class="fs-label">// plugins</span>
+        <h2 class="fs-title">Plugins</h2>
+        <p class="fs-sub">Repositories that extend actinia with additional functionality.</p>
+        <div id="plugin-repos" class="repo-grid"></div>
+    </section>
+
+    <section class="repo-section">
+        <span class="fs-label">// Examples</span>
+        <h2 class="fs-title">Examples and learning material</h2>
+        <p class="fs-sub">Tutorials, workshops, notebooks and processing examples.</p>
+        <div id="example-repos" class="repo-grid"></div>
+    </section>
+
+    <section class="repo-section">
+        <span class="fs-label">// Deployment</span>
+        <h2 class="fs-title">Deployment</h2>
+        <p class="fs-sub">Docker, Helm and deployment-related resources.</p>
+        <div id="deployment-repos" class="repo-grid"></div>
+    </section>
+
+    <section class="repo-section">
+        <span class="fs-label">// other</span>
+        <h2 class="fs-title">Other repositories</h2>
+        <p class="fs-sub">Repositories without a documentation category yet.</p>
+        <div id="other-repos" class="repo-grid"></div>
+    </section>
+
+
+
 
 
 <!-- **** Begin Fork-Me-On-Gitlab-Ribbon-HTML. See MIT License at https://gitlab.com/seanwasere/fork-me-on-gitlab **** -->
