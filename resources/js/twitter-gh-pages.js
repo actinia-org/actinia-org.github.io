@@ -31,7 +31,6 @@
     function getCategoryTopics(repo) {
       var categoryTopics = [
         "actinia-core",
-        "actinia-api",
         "actinia-plugin",
         "actinia-example",
         "actinia-docs",
@@ -54,10 +53,6 @@
 
       if (hasTopic(repo,"actinia-plugin")){
         return "#plugin-repos";
-      }
-
-      if (hasTopic(repo,"actinia-api")){
-        return "#api-repos";
       }
 
       if (hasTopic(repo,"actinia-training")){

@@ -98,21 +98,45 @@ div#logo img {
 }
 /* ----------- */
 div.top {
-    width: 190px;
-    height: 165px;
+    width:4.5em;
+    height:4.5em;
+    background-color:  #86cd31;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background-color:  #fff;
+    
     text-align:center;
-    width:4em;
-    height:4em;
     float:left;
     margin-left:2em;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.top::before {
+    content: "";
+    position: absolute;
+
+    /* Grosor del borde */
+    inset: 2px;
+
+    background-color: #fff;
+
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: 0;
+}
+div.top img,
+div.top p {
+    position: relative;
+    z-index: 1;
 }
 div.top:hover {
     background-color:#fff;
 }
 div.top img.gh {
-    width: 4em;
+    position: center;
+    width: 3em;
 }
 div.top p {
     margin: 0;
@@ -166,23 +190,53 @@ div.top p {
 }
 
 .hex-link {
-    width: 190px;
-    height: 165px;
+    width: 240px;
+    height: 215px;
+
+    background: #86cd31;
+
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background: rgba(134,205,49,0.15);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     padding: 20px 30px;
+    box-sizing: border-box;
+
     text-decoration: none;
     color: #404040;
     transition: background 0.2s;
+
+    position: relative;
+    overflow: hidden;
+    
 }
 
-.hex-link:hover {
+.hex-link:not(.featured)::before {
+    content: "";
+    position: absolute;
+
+    inset: 2px;
+
+    background: #f5faee;
+
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: 0;
+}
+
+
+.hex-link > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.hex-link:not(.featured):hover::before {
     background: #86cd31;
+    
 }
 
 .hex-link.featured {
@@ -192,6 +246,7 @@ div.top p {
 .hex-link.featured:hover {
     background: #9ddd45;
 }
+
 
 .hex-num {
     font-family: 'Source Code Pro', monospace;
@@ -250,9 +305,6 @@ div.top p {
     color: rgba(0,0,0,0.45);
     border-color: rgba(0,0,0,0.3);
 }
-
-
-
 
 
 @media screen and (max-width: 1000px) {
