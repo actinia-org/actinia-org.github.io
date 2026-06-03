@@ -34,7 +34,8 @@
         "actinia-plugin",
         "actinia-example",
         "actinia-docs",
-        "actinia-deployment"
+        "actinia-deployment",
+        "actinia-client"
       ];
 
       if (!repo.topics) {
@@ -46,7 +47,9 @@
       });
     }
 
-    function getRepoTarget(repo){
+   
+    function getRepoTarget(repo,){
+      
       if (hasTopic(repo,"actinia-core")){
         return "#core-repos";
       }
@@ -60,6 +63,9 @@
       }
       if (hasTopic(repo,"actinia-deployment")){
         return "#deployment-repos";
+      }
+      if (hasTopic(repo,"actinia-client")){
+        return "#client-repos";
       }
       return "#other-repos";
     }  
@@ -134,6 +140,10 @@
             });
 
             $.each(repos, function (i, repo) {
+              if (repo.archived) {
+                return true;
+              }
+
               addRepo(repo);
             });
 
