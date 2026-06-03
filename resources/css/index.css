@@ -78,12 +78,28 @@ div#logo{
     width: 225px;
     height: 200px;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background: #fff;
+    background: #86cd31;
     margin:auto;
     text-align:center;
     position: relative;
     
 }
+div#logo::before {
+    content: "";
+    position: absolute;
+
+    inset: 3px;
+
+    background: #f5faee;
+
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: 0;
+}
+div#logo > * {
+    position: relative;
+    z-index: 1;
+}
+
 div#logo p{
     padding-top:3em;
     font-size:3em;
