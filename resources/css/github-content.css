@@ -101,9 +101,7 @@ div#recently-updated > * {
   margin-top: 4em;
   margin-bottom: 5em;
 }
-div.repo:nth-child(even) {
-  transform: translateY(55px);
-}
+
 div.repo {
   /*max-width: 18em;
   aspect-ratio: 1/1;*/
@@ -128,7 +126,7 @@ div.repo > a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  
   width: 100%;
   height: 100%;
 
@@ -146,24 +144,26 @@ div.repo > a {
   color: inherit;
   box-sizing: border-box;
 
-  padding: 38px 50px;
+  padding: 42px 56px;
+  gap: 6px;
   }
 
 div.repo h2 {
-  font-size: 18px;
+  font-size: 17px;
   color: #1a1a1a;
   text-align: center;
-  line-height: 1.2;
-  margin: 0 0 10px 0;
+  line-height: 1.15;
+  margin: 0;
   font-weight: 600;
+  max-width: 100%;
 }
 div.repo h3 {
-  font-size: 13px;
+  font-size: 12px;
   color: #FE5013;
   text-align: center;
   font-weight: normal;
   line-height: 1.2;
-  margin: 0 0 4px 0;
+  margin: 0 ;
 }
 div.repo h3:nth-child(2) {
   color: #FE5013;
@@ -173,20 +173,21 @@ div.repo h4 {
   text-align: center;
 }
 div.repo p {
-  font-size: 14px;
+  font-size: 13px;
   color: #555;
   text-align: center;
-  line-height: 1.35;
+  line-height: 1.25;
   margin: 4px 0 0 0;
 }
 
 div.repo button {
   background: transparent;
   border: 1px solid #86cd31;
-  margin: 3px;
-  font-size: 11px;
-  padding: 1px 4px;
+  margin: 2px;
+  font-size: 10.5px;
+  padding: 2px 5px;
   color: #1a1a1a;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
