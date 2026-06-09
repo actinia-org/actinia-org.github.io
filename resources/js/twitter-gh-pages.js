@@ -32,9 +32,9 @@
       var categoryTopics = [
         "actinia-core",
         "actinia-plugin",
-        "actinia-example",
         "actinia-docs",
         "actinia-deployment",
+        "actinia-training",
         "actinia-client"
       ];
 
@@ -48,7 +48,7 @@
     }
 
    
-    function getRepoTarget(repo,){
+    function getRepoTarget(repo){
       
       if (hasTopic(repo,"actinia-core")){
         return "#core-repos";
@@ -154,7 +154,11 @@
               return 0;
             });
 
-            $.each(repos.slice(0, 3), function (i, repo) {
+            var activeRepos = repos.filter(function (repo) {
+              return !repo.archived;
+            });
+
+            $.each(activeRepos.slice(0, 3), function (i, repo) {
               addRecentlyUpdatedRepo(repo);
             });
           });
