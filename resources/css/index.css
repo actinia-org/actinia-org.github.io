@@ -67,6 +67,7 @@ a {
 
 hr {
     clear: both;
+    text-align: center;
     opacity: 0;
 }
 
@@ -92,13 +93,13 @@ main {
 main p#description {
     width: min(72vw, 1200px);
     margin-left: auto;
-    margin-right: clamp(2rem, 8vw, 12rem);
+    margin-right: auto;
+    
 }
 main p#description {
     max-width: 1200px;
     text-align: center;
 }
-
 
 div#logo{
     width: 225px;
@@ -127,7 +128,7 @@ div#logo > * {
 }
 
 div#logo p{
-    padding-top:3em;
+    padding-top:3.2em;
     font-size:3em;
 }
 div#logo:hover {
